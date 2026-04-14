@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Phone, MapPin, MessageSquare, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
+import { sendContactEmail } from "../app/actions";
 
 export default function Contact() {
   const { strings } = useLanguage();
@@ -13,10 +14,20 @@ export default function Contact() {
     { icon: MapPin, label: "Zona de servicio", value: "Turre, Almería", href: "#" },
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    
+    const formData = new FormData(e.currentTarget);
+    
+    const result = await sendContactEmail(formData);
+
+    if (result.success) {
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 5000);
+      (e.target as HTMLFormElement).reset(); 
+    } else {
+      alert("Hubo un error al enviar el mensaje. Inténtalo de nuevo.");
+    }
   };
 
   return (
@@ -94,15 +105,15 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label className="block text-xs font-semibold text-[#d4a574] mb-2 uppercase tracking-wide">{strings.contact.nameLabel}</label>
-                <input required type="text" className="w-full bg-slate-800/50 border border-slate-600 focus:border-brand text-white p-4 rounded-xl outline-none transition-all text-sm" placeholder={strings.contact.namePlaceholder} />
+                <input name="name" required type="text" className="w-full bg-slate-800/50 border border-slate-600 focus:border-brand text-white p-4 rounded-xl outline-none transition-all text-sm" placeholder={strings.contact.namePlaceholder} />
               </div>
               <div>
                 <label className="block text-xs font-semibold text-[#d4a574] mb-2 uppercase tracking-wide">{strings.contact.phoneLabel}</label>
-                <input required type="tel" className="w-full bg-slate-800/50 border border-slate-600 focus:border-brand text-white p-4 rounded-xl outline-none transition-all text-sm" placeholder={strings.contact.phonePlaceholder} />
+                <input name="phone" required type="tel" className="w-full bg-slate-800/50 border border-slate-600 focus:border-brand text-white p-4 rounded-xl outline-none transition-all text-sm" placeholder={strings.contact.phonePlaceholder} />
               </div>
               <div>
                 <label className="block text-xs font-semibold text-[#d4a574] mb-2 uppercase tracking-wide">{strings.contact.messageLabel}</label>
-                <textarea required className="w-full bg-slate-800/50 border border-slate-600 focus:border-brand text-white p-4 rounded-xl h-32 outline-none transition-all text-sm resize-none" placeholder={strings.contact.messagePlaceholder} />
+                <textarea name="message" required className="w-full bg-slate-800/50 border border-slate-600 focus:border-brand text-white p-4 rounded-xl h-32 outline-none transition-all text-sm resize-none" placeholder={strings.contact.messagePlaceholder} />
               </div>
 
               <button type="submit" className="w-full bg-[#d4a574] hover:bg-brand text-slate-950 font-bold py-4 rounded-xl transition-all shadow-lg uppercase text-sm active:scale-95">
