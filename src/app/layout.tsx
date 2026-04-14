@@ -9,6 +9,9 @@ const baseUrl = "https://piscinas-el-rubillo.vercel.app";
 export const metadata: Metadata = {
   title: "Mantenimiento de Piscinas en Turre, Mojácar, Vera y Garrucha | El Rubillo",
   description: "Servicio profesional de limpieza y mantenimiento de piscinas en Turre, Mojácar, Garrucha, Vera Playa, Villaricos, Palomares y alrededores. Control de pH, cloro y reparación de bombas.",
+  verification: {
+    google: 'BMKwLvpmJJQ_Pv7VKop25SEfWOz49U6w8SA34D8JTm8',
+  },
   keywords: [
     "mantenimiento de piscinas Turre",
     "limpieza de piscinas Mojácar",
