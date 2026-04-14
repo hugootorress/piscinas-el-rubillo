@@ -8,7 +8,7 @@ export default function Hero() {
   const { strings } = useLanguage();
 
   return (
-    <section className="relative min-h-[95vh] overflow-hidden pt-24 flex items-center">
+    <section className="relative min-h-screen overflow-hidden pt-24 flex items-center">
       <div className="absolute inset-0 -z-10">
         <Image 
           src="/hero-bg.jpg" 
@@ -45,18 +45,18 @@ export default function Hero() {
           initial={{ y: 20, opacity: 0 }} 
           animate={{ y: 0, opacity: 1 }} 
           transition={{ duration: 0.8, delay: 0.4 }} 
-          className="flex flex-col md:flex-row gap-4 justify-center items-center pt-6"
+          className="flex flex-col md:flex-row gap-4 justify-center items-center pt-6 pb-20 md:pb-0"
         >
           <a 
             href={`#${strings.contact.sectionId}`} 
-            className="w-fit bg-[#d4a574] text-slate-950 px-8 md:px-10 py-3.5 rounded-full font-bold shadow-glow-sm inline-block transition-transform hover:scale-105"
+            className="w-full md:w-fit bg-[#d4a574] text-slate-950 px-8 md:px-10 py-3.5 rounded-full font-bold shadow-glow-sm inline-block transition-transform hover:scale-105 text-center"
           >
             {strings.hero.btnQuote}
           </a>
 
           <a 
             href={`#${strings.services.sectionId}`} 
-            className="w-fit border-2 border-white text-white px-8 md:px-10 py-3.5 rounded-full font-bold inline-block transition-transform hover:scale-105 hover:bg-white/10"
+            className="w-full md:w-fit border-2 border-white text-white px-8 md:px-10 py-3.5 rounded-full font-bold inline-block transition-transform hover:scale-105 hover:bg-white/10 text-center"
           >
             {strings.hero.btnServices}
           </a>
@@ -64,11 +64,11 @@ export default function Hero() {
       </div>
 
       <motion.div 
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10" 
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 mt-12" 
         animate={{ y: [0, 10, 0] }} 
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <ChevronDown className="text-brand w-8 h-8" />
+        <ChevronDown className="text-[#d4a574] w-8 h-8" />
       </motion.div>
     </section>
   );

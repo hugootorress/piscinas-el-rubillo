@@ -43,7 +43,7 @@ export default function Services() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-brand/20 to-transparent rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-              <div className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 p-6 h-[320px] flex flex-col text-center shadow-xl transition-all duration-300 group-hover:border-brand/50 group-hover:shadow-glow-sm">
+              <div className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 p-6 h-auto md:h-[320px] flex flex-col text-center shadow-xl transition-all duration-300 group-hover:border-brand/50 group-hover:shadow-glow-sm">
                 <div className="w-14 h-14 mx-auto bg-gradient-to-br from-brand to-brand-light rounded-2xl flex items-center justify-center text-white mb-2 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   {icons[i]}
                 </div>
