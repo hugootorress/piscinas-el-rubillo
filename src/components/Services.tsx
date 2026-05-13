@@ -1,6 +1,5 @@
 "use client";
 import { Droplets, ShieldCheck, Settings, Clock } from "lucide-react";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/components/LanguageProvider";
 
 const icons = [
@@ -33,12 +32,8 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[320px] md:max-w-5xl mx-auto">
           {strings.services.items.map((s, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group relative transition-all duration-500 hover:-translate-y-3 hover:rotate-1"
             >
               <div className="absolute -top-2 -right-2 w-16 h-16 bg-brand/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -60,7 +55,7 @@ export default function Services() {
                   <p className="text-slate-400 text-sm leading-relaxed flex-1 flex items-end justify-center">{s.desc2}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

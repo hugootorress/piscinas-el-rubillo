@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Gallery() {
@@ -27,12 +26,8 @@ export default function Gallery() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[340px] sm:max-w-md md:max-w-3xl mx-auto">
           {strings.gallery.projects.map((project, idx) => (
-            <motion.div
+            <div
               key={project.id}
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-950/80 shadow-2xl transition-all duration-500 hover:-translate-y-2 h-[260px] md:h-[280px]"
             >
               <Image
@@ -50,7 +45,7 @@ export default function Gallery() {
                 <h3 className="text-xl font-semibold text-white mb-2">{project.name}</h3>
                 <p className="text-sm text-slate-200 leading-relaxed">{project.details}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
