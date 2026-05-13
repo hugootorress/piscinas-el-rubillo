@@ -11,14 +11,17 @@ export default function Hero() {
     <section className="relative min-h-screen overflow-hidden pt-24 flex items-center">
       <div className="absolute inset-0 -z-10">
         <Image 
-          src="/hero-bg.jpg" 
-          alt={strings.hero.imageAlt} 
+          src="/hero-bg.webp" 
+          alt="Piscina cristalina después de mantenimiento profesional en Turre, Mojácar, Vera y Garrucha - Piscinas El Rubillo" 
           fill 
           sizes="100vw" 
           className="object-cover" 
           priority 
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(179,145,74,0.18),transparent_30%),linear-gradient(180deg,rgba(0,74,135,0.4),rgba(15,23,42,0.95))]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(15,118,110,0.15),transparent_30%),linear-gradient(180deg,rgba(8,145,178,0.3),rgba(30,41,59,0.95))]"></div>
+        
+        <div className="absolute top-20 left-10 w-32 h-32 bg-brand/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-16 w-24 h-24 bg-brand-light/15 rounded-full blur-lg animate-pulse delay-1000"></div>
       </div>
 
       <div className="relative z-10 px-6 py-12 max-w-4xl mx-auto text-center space-y-6">
@@ -26,7 +29,7 @@ export default function Hero() {
           initial={{ y: 20, opacity: 0 }} 
           animate={{ y: 0, opacity: 1 }} 
           transition={{ duration: 0.8 }} 
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 tracking-tight leading-tight"
+          className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-tight max-w-4xl"
         >
           {strings.hero.title} <br />
           <span className="text-[#d4a574]">{strings.hero.highlight}</span>

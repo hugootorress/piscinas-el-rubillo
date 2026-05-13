@@ -36,18 +36,17 @@ export default function Gallery() {
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-slate-950/80 shadow-2xl transition-all duration-500 hover:-translate-y-2 h-[260px] md:h-[280px]"
             >
               <Image
-                src={`/trabajo${project.id}.jpg`}
+                src={`/trabajo${project.id}.webp`}
                 alt={`${project.name} - Piscinas El Rubillo`}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
-                // Priority solo para la primera imagen para optimizar el LCP
                 priority={idx === 0} 
               />
               
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/20 to-transparent opacity-80"></div>
 
-              <div className="absolute inset-x-0 bottom-0 p-6 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 z-10">
+              <div className="absolute inset-x-0 bottom-0 p-6 opacity-100 md:opacity-0 md:translate-y-8 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-500 z-10">
                 <h3 className="text-xl font-semibold text-white mb-2">{project.name}</h3>
                 <p className="text-sm text-slate-200 leading-relaxed">{project.details}</p>
               </div>

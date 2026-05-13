@@ -16,7 +16,7 @@ export default function Navbar() {
           <div className="flex justify-start">
             <div className="block min-w-fit">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt="El Rubillo Piscinas"
                 width={280}
                 height={112}

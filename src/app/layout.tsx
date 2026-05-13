@@ -63,6 +63,52 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body className={`${inter.className} bg-navy text-slate-200 antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Piscinas El Rubillo",
+              "description": "Servicio profesional de mantenimiento y limpieza de piscinas en el Levante Almeriense, incluyendo Turre, Mojácar, Vera, Garrucha, Carboneras y Cuevas del Almanzora.",
+              "url": baseUrl,
+              "telephone": "+34-641-312-550",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Almería",
+                "addressCountry": "ES"
+              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Turre"
+                },
+                {
+                  "@type": "City",
+                  "name": "Mojácar"
+                },
+                {
+                  "@type": "City",
+                  "name": "Vera"
+                },
+                {
+                  "@type": "City",
+                  "name": "Garrucha"
+                },
+                {
+                  "@type": "City",
+                  "name": "Carboneras"
+                },
+                {
+                  "@type": "City",
+                  "name": "Cuevas del Almanzora"
+                }
+              ],
+              "serviceType": "Mantenimiento de Piscinas",
+              "priceRange": "$$"
+            })
+          }}
+        />
         {children}
       </body>
     </html>

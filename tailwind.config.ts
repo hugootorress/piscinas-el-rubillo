@@ -1,4 +1,3 @@
-// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 export default {
@@ -11,17 +10,17 @@ export default {
     extend: {
       colors: {
         brand: {
-          DEFAULT: '#b3914a',
-          light: '#d4a574',   
+          DEFAULT: '#0f766e',
+          light: '#34d399',
         },
         navy: {
-          DEFAULT: '#0f172a', 
-          blue: '#004a87'     
+          DEFAULT: '#1e293b',
+          blue: '#0891b2'
         }
       },
       boxShadow: {
-        'glow': '0 0 40px rgba(179, 145, 74, 0.4)',
-        'glow-sm': '0 18px 60px rgba(179, 145, 74, 0.2)',
+        'glow': '0 0 40px rgba(15, 118, 110, 0.4)',
+        'glow-sm': '0 18px 60px rgba(15, 118, 110, 0.2)',
       }
     },
   },

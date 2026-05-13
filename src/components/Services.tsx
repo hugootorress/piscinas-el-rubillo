@@ -14,7 +14,7 @@ export default function Services() {
   const { strings } = useLanguage();
 
   return (
-    <section id={strings.services.sectionId} className="py-20 bg-gradient-to-br from-slate-900 to-blue-900 relative overflow-hidden">
+    <section id={strings.services.sectionId} className="py-12 bg-gradient-to-br from-slate-900 to-blue-900 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-brand/5 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-brand-light/5 rounded-full blur-3xl -z-10"></div>
 
@@ -39,21 +39,25 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative transition-transform duration-300 hover:-translate-y-2"
+              className="group relative transition-all duration-500 hover:-translate-y-3 hover:rotate-1"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-brand/20 to-transparent rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute -top-2 -right-2 w-16 h-16 bg-brand/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="absolute inset-0 bg-gradient-radial from-brand/10 via-transparent to-transparent rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-              <div className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 p-6 h-auto md:h-[320px] flex flex-col text-center shadow-xl transition-all duration-300 group-hover:border-brand/50 group-hover:shadow-glow-sm">
-                <div className="w-14 h-14 mx-auto bg-gradient-to-br from-brand to-brand-light rounded-2xl flex items-center justify-center text-white mb-2 shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <div className="group relative overflow-hidden rounded-3xl border border-slate-700/50 bg-gradient-to-br from-slate-900/90 via-slate-950/80 to-slate-900/90 p-8 h-auto md:h-[380px] flex flex-col text-center shadow-2xl transition-all duration-500 group-hover:border-brand/30 group-hover:shadow-glow group-hover:from-slate-800/90 group-hover:via-slate-900/80 group-hover:to-slate-800/90">
+
+                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-brand via-brand-light to-navy-blue rounded-3xl flex items-center justify-center text-white mb-6 shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 relative z-10">
+                  <div className="absolute inset-0 bg-brand/20 rounded-3xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   {icons[i]}
                 </div>
 
-                <div className="flex-1 flex flex-col pt-2">
-                  <h3 className="text-lg font-bold text-white mb-2 leading-tight group-hover:text-brand transition-colors">
+                <div className="flex-1 flex flex-col">
+                  <h3 className="text-xl font-black text-white mb-4 leading-tight group-hover:text-brand transition-colors duration-300 tracking-wide">
                     {s.title}
                   </h3>
-                  <p className="text-slate-300 text-xs leading-relaxed mb-2">{s.desc}</p>
-                  <p className="text-slate-400 text-sm leading-relaxed">{s.desc2}</p>
+                  <p className="text-slate-300 text-sm leading-relaxed mb-3 font-medium">{s.desc}</p>
+                  <p className="text-slate-400 text-sm leading-relaxed flex-1 flex items-end justify-center">{s.desc2}</p>
                 </div>
               </div>
             </motion.div>
